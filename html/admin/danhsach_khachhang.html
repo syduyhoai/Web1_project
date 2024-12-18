@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1acf2d22a5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../css/admin/style_danhsach_donhang.css">
+    <title>Thống kê</title>
+   
+</head>
+<body>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="navbar-list">
+                <!--link hompage-->
+                <li class="left">
+                    <a href="trangchu.html">
+                    <img src="../../img/logophuc.jpg">
+                    </a>
+                </li>
+                <div class="right" style="margin-left: 500px;">
+                    <li >
+                        <input type="text" placeholder="Tên sản phẩm..."style="border-radius:30px;" > 
+                        <a href="ketquatimkiem.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    </li>
+                </div >
+                
+                <li style="margin-left: auto; ">
+                    <a href="dangnhap.html" 
+                       style="font-size: 20px; color: inherit; text-decoration: none;margin-top: auto;"
+                       onmouseover="this.style.color='red'" onmouseout="this.style.color=''">
+                        Đăng xuất
+                    </a>
+                </li>
+
+                <li>
+                    <a href="chi_tiet_admin.html" 
+                       style="color: inherit; text-decoration: none; font-size: 20px;margin-top: auto"
+                       onmouseover="this.style.color='red'" onmouseout="this.style.color=''">
+                        <i class="fa-solid fa-circle-user" style="color: inherit; transition: color 0.3s; font-size: 20px;;"></i> Admin
+                    </a>
+                </li>
+                
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <aside id="mySidebar">
+            <ul>            
+                <li><a href="trangchu.html">Sản phẩm</a></li>
+                <li><a href="donhang.html">Đơn hàng</a></li>
+                <li><a href="nguoidung.html">Người dùng</a></li>
+                <li><a class="active" href="thongke.html">Thống kê</a></li>
+                <li><a onclick="w3_close()">Đóng &times;</a></li>
+            </ul>
+        </aside>
+        <section id="main">
+            <button id="openNav" class="menu-button" onclick="w3_open()">&#9776; Menu</button>
+            <!--create button-->
+            <h1 style="text-align: center;">Danh sách đơn hàng của khách hàng</h1>
+            <table>
+                <th>Khách hàng</th>
+                <tr class="title">
+                    <th>Avatar</th>
+                    <th>Khách hàng</th>
+                    <th>Email</th>
+                    <th>Số điện thoại</th>
+                    <th>Ngày sinh</th>
+                </tr>
+                <tr class="user">
+                    <td><a href="chi_tiet_nguoi_dung.html"><img src="../../img/avata3.png" alt="per3"></a></td>
+                    <td>Nguyễn Thị C</td>
+                    <td>thic@gmail.com</td>
+                    <td>099888777</td>
+                    <td>22/02/2002</td>  
+                </tr>
+                <!--noi dung tieu de-->
+                <th>Danh sách đơn hàng</th>
+                <tr class="title">
+                    <th>Khách hàng</th>
+                    <th>Địa chỉ</th>
+                    <th>Thành tiền</th>
+                    <th>Thời gian</th>
+                    <th>Trạng thái</th>
+                </tr>
+                <tr class="product">
+                    <td>Nguyễn Thị C</td>
+                    <td>273 An Dương Vương, p4, q5, TP HCM</td>
+                    <td>11.490.000đ</td>
+                    <td>2024-01-01</td>
+                    <td>Chưa nhận</td>
+                    <td><a href="chi_tiet_don_hang.html">View</a></td>
+                </tr>
+                <tr class="product">
+                    <td>Nguyễn Thị C</td>
+                    <td>273 An Dương Vương, p4, q5, TP HCM</td>
+                    <td>11.490.000đ</td>
+                    <td>2024-01-01</td>
+                    <td>Đã nhận</td>
+                    <td><a href="chi_tiet_don_hang.html">View</a></td>
+                </tr>
+                <tr class="product">
+                    <td>Nguyễn Thị C</td>
+                    <td>273 An Dương Vương, p4, q5, TP HCM</td>
+                    <td>11.490.000đ</td>
+                    <td>2024-01-01</td>
+                    <td>Đã nhận</td>
+                    <td><a href="chi_tiet_don_hang.html">View</a></td>
+                    <!-- <td >
+                        <select id="trangthai" class="state">
+                            <option value="daNhan">Đã nhận</option>
+                            <option value="chuaNhan">Chưa nhận</option>
+                            <option value="huy">Hủy</option>
+                        </select>
+                    </td> -->
+                    
+                </tr>
+                <tr class="product">
+                    <td>Nguyễn Thị C</td>
+                    <td>273 An Dương Vương, p4, q5, TP HCM</td>
+                    <td>11.490.000đ</td>
+                    <td>2024-01-01</td>
+                    <td>Đã nhận</td>
+                    <td><a href="chi_tiet_don_hang.html">View</a></td>
+                    <!-- <td >
+                        <select id="trangthai" class="state">
+                            <option value="daNhan">Đã nhận</option>
+                            <option value="chuaNhan">Chưa nhận</option>
+                            <option value="huy">Hủy</option>
+                        </select>
+                    </td> -->
+                    
+                </tr>
+        </table>       
+    </main>
+    <script>
+        // js cua phan aside menu
+			function w3_open() {
+  				document.getElementById("main").style.marginLeft = "15%";
+  				document.getElementById("mySidebar").style.width = "15%";
+  				document.getElementById("mySidebar").style.display = "block";
+  				document.getElementById("openNav").style.display = 'none';
+				}
+			function w3_close() {
+  				document.getElementById("main").style.marginLeft = "0%";
+  				document.getElementById("mySidebar").style.display = "none";
+  				document.getElementById("openNav").style.display = "inline-block";
+			}
+
+            function warning(){
+				alert("Bạn đã lưu thành công !");
+				window.location.href = "orderAdmin.html";
+            }
+    </script>
+            
+    </main>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/1acf2d22a5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style_chi_tiet_donhang.css">
+    <title>Chi tiết đơn hàng</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="navbar-list">
+                <!--link hompage-->
+                <li>
+                    <a href="trangchu_DN.html">
+                    <img src="../img/logophuc.jpg">
+                    </a>
+                </li>
+                <li>
+                    <!--<input type="text" placeholder="Bạn tìm gì..."> 
+                    <i class="fa-solid fa-magnifying-glass"></i>  -->
+                    <input type="text"  placeholder="Bạn tìm gì.."> 
+                    <a href="ket_qua_TK_DN.html" class="srch">
+                        <i class="fa-solid fa-magnifying-glass"></i> 
+                    </a>
+                </li>
+                <li>
+                    <a href="tim_kiem_NC_DN.html">Tìm kiếm nâng cao</a>
+                </li>
+                <li>
+                    <a href="giohang.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Giỏ hàng 
+                    </a>
+                </li>
+                <li>
+                    <a href="donmua.html">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    Lịch sử mua hàng
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="index.html">Đăng xuất</a>
+                </li>               
+                <li>
+                    <span class="user-afterLog"><i class="fa-solid fa-circle-user"></i></span>Phuc
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <aside>
+            <a><i class="fa-regular fa-circle-user"></i>Phuc</a>
+            <a href = "donmua.html" class="active"><i class='bx bxs-receipt' ></i>Đơn mua</a>
+            <a href="giohang.html"  class="link"><i class="fa-solid fa-cart-shopping"></i>Giỏ hàng</a>            
+        </aside>
+    <section>
+    <h2>Chi tiết đơn hàng</h2>
+    <div class="list">
+        <div class="product">
+            <img src="../img/iphone.png" alt="Samsung Galaxy A55 5G">
+            <div class="info">
+                <p class="name">Samsung Galaxy A55 5G</p>
+                <p>11.490.000đ<p>
+                <p>x1</p>
+            </div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="product">
+            <img src="../img/samsung.png" alt="Samsung Galaxy A55 5G">
+            <div class="info">
+                <p class="name">Samsung Galaxy A55 5G</p>
+                <p>11.490.000đ<p>
+                <p>x1</p>
+            </div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="product">
+            <img src="../img/iphone2.png" alt="Samsung Galaxy A55 5G">
+            <div class="info">
+                <p class="name">Samsung Galaxy A55 5G</p>
+                <p>11.490.000đ<p>
+                <p>x1</p>
+            </div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="product">
+            <img src="../img/iphone.png" alt="Samsung Galaxy A55 5G">
+            <div class="info">
+                <p class="name">Samsung Galaxy A55 5G</p>
+                <p>11.490.000đ<p>
+                <p>x1</p>
+            </div>
+        </div>
+    </div>
+    <div class="confirm">
+        <div class="address">
+            <div class="title"><i class='bx bxs-map'></i>Địa chỉ nhận hàng</div>
+            <div class="firstEle">
+                <p>Phuc | SĐT: 0386 053 241</p>
+                <p>Địa chỉ: 273 An Dương Vương, p4, q5, TP Hồ Chí Minh</p>
+            </div>
+        </div>
+        <div class="pay">
+            <p class="status"><i class='bx bxs-truck'></i>Đơn hàng đã được giao thành công</p>
+            <p>Tổng thanh toán: 18.990.000đ</p>
+        </div>
+    </div>
+</div>
+    </section>
+</main>
+<!--footer-->
+<footer>
+				<h2>PhucPhone</h2>
+				<p>Tổng đài liên hệ: 1900 900 900</p>
+				<p>Email: phucphone@gmail.com</p>
+			</footer>
+
+<script>
+var plus = document.getElementsByClassName('plus'),
+    minus = document.getElementsByClassName('minus'),
+    num = document.getElementsByClassName('num');
+
+    for(var i=0; i<plus.length; i++){
+    var buttonPlus = plus[i];
+    var buttonMinus = minus[i];
+    buttonPlus.addEventListener('click', function(event){
+        var buttonClicked = event.target;
+        var input = buttonClicked.parentElement.children[1];
+        input.value=parseInt(input.value)+1;
+    })
+
+    buttonMinus.addEventListener('click', function(event){
+        var buttonClicked = event.target;
+        var input = buttonClicked.parentElement.children[1];
+        if(input.value>0)
+            input.value=parseInt(input.value)-1;
+    })
+}
+
+</script>
+</body>
+</html>

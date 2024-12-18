@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://kit.fontawesome.com/1acf2d22a5.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="../../css/admin/style_chitiethoadon.css">
+        <link rel="stylesheet" href="../../css/admin/style_chitiethoadon.css">
+         <!-- css style - co the sua lai -->
+		<title>Đơn hàng</title>
+	</head>
+    <body>
+        <header>
+            <nav>
+				<ul class="navbar-list">
+					<!--link hompage-->
+					<li class="left">
+						<a href="trangchu.html">
+						<img src="../../img/logophuc.jpg">
+						</a>
+					</li>
+					<div class="right" style="margin-left: 500px;">
+						<li >
+							<input type="text" placeholder="Tên sản phẩm..."style="border-radius:30px;" > 
+							<a href="ketquatimkiem.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+						</li>
+					</div >
+					
+					<li style="margin-left: auto; ">
+						<a href="dangnhap.html" 
+						   style="font-size: 20px; color: inherit; text-decoration: none;margin-top: auto;"
+						   onmouseover="this.style.color='red'" onmouseout="this.style.color=''">
+							Đăng xuất
+						</a>
+					</li>
+	
+					<li>
+						<a href="chi_tiet_admin.html" 
+						   style="color: inherit; text-decoration: none; font-size: 20px;margin-top: auto"
+						   onmouseover="this.style.color='red'" onmouseout="this.style.color=''">
+							<i class="fa-solid fa-circle-user" style="color: inherit; transition: color 0.3s; font-size: 20px;;"></i> Admin
+						</a>
+					</li>
+					
+				</ul>
+			</nav>
+        </header>
+        <main>
+            <aside id="mySidebar">
+                <ul>            
+                    <li><a href="trangchu.html">Sản phẩm</a></li>
+                    <li><a class="active" href="donhang.html">Đơn hàng</a></li>
+                    <li><a href="nguoidung.html">Người dùng</a></li>
+                    <li><a href="thongke.html">Thống kê</a></li>
+                    <li><a onclick="w3_close()">Đóng &times;</a></li>
+                </ul>
+            </aside>
+            <section id="main">
+                <button id="openNav" class="menu-button" onclick="w3_open()">&#9776; Menu</button>
+                <!--create button-->
+                <h1>Chi tiết đơn hàng</h1>
+                <table>
+                    <th>Khách hàng</th>
+                    <tr class="title">
+                        <th>Avatar</th>
+                        <th>Khách hàng</th>
+                        <th>Email</th>
+                        <th>Số điện thoại</th>
+                        <th>Ngày sinh</th>
+                    </tr>
+                    <tr class="user">
+                        <td><a href="chi_tiet_nguoi_dung.html"><img src="../../img/avata3.png" alt="per3"></a></td>
+                        <td>Nguyễn Thị C</td>
+                        <td>thic@gmail.com</td>
+                        <td>099888777</td>
+                        <td>22/02/2002</td>
+                        
+                    </tr>
+                    <!--noi dung tieu de-->
+                <th>Danh sách sản phẩm</th>
+                <tr class="title">
+                    <th>Hình ảnh</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Đơn giá</th> <!--don gia/ san pham-->
+                </tr>
+                <!--noi dung cac san pham-->
+                <tr class="product">
+                    <td><a href="chi_tiet_sp.html"><img src="../../img/iphone.png" alt="lap1"></a></td>
+                    <td>Iphone 16 pro max</td>
+                    <td>2</td>
+                    <td>60.490.000đ</td>
+                </tr>
+                <tr class="product">
+                    <td><a href="chi_tiet_sp.html"><img src="../../img/samsung.png" alt="lap1"></a></td>
+                    <td>Samsung a73 plus</td>
+                    <td>1</td>
+                    <td>16.490.000đ</td>
+                </tr>
+                <tr class="product">
+                    <td><a href="chi_tiet_sp.html"><img src="../../img/iphone2.png" alt="lap2"></a></td>
+                    <td>Iphone 7 plus</td>
+                    <td>3</td>
+                    <td>45.490.000đ</td>
+    
+                </tr>
+                <tr class="product">
+                    <td colspan="2" class="tong">Tổng</td>
+                    <td></td>
+                    <td>120.490.000đ</td>
+                </tr>
+            </table>       
+        </main>
+        <script>
+            // js cua phan aside menu
+                function w3_open() {
+                      document.getElementById("main").style.marginLeft = "15%";
+                      document.getElementById("mySidebar").style.width = "15%";
+                      document.getElementById("mySidebar").style.display = "block";
+                      document.getElementById("openNav").style.display = 'none';
+                    }
+                function w3_close() {
+                      document.getElementById("main").style.marginLeft = "0%";
+                      document.getElementById("mySidebar").style.display = "none";
+                      document.getElementById("openNav").style.display = "inline-block";
+                }
+    
+                function warning(){
+                    alert("Bạn đã lưu thành công !");
+                    window.location.href = "orderAdmin.html";
+                }
+        </script>
+                
+        </main>
+    </body>
+    </html>

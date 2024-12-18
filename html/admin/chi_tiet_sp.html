@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://kit.fontawesome.com/1acf2d22a5.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="../../css/admin/style_chi_tiet_sp.css"> <!-- css style - co the sua lai -->
+		<title>Sản phẩm</title>
+	</head>
+    <body>
+        <header>
+            <nav>
+				<ul class="navbar-list">
+					<!--link hompage-->
+					<li class="left">
+						<a href="trangchu.html">
+						<img src="../../img/logophuc.jpg">
+						</a>
+					</li>
+					<div class="right" style="margin-left: 500px;">
+						<li >
+							<input type="text" placeholder="Tên sản phẩm..."style="border-radius:30px;" > 
+							<a href="ketquatimkiem.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+						</li>
+					</div >
+					
+					<li style="margin-left: auto; ">
+						<a href="dangnhap.html" 
+						   style="font-size: 20px; color: inherit; text-decoration: none;margin-top: auto;"
+						   onmouseover="this.style.color='red'" onmouseout="this.style.color=''">
+							Đăng xuất
+						</a>
+					</li>
+	
+					<li>
+						<a href="chi_tiet_admin.html" 
+						   style="color: inherit; text-decoration: none; font-size: 20px;margin-top: auto"
+						   onmouseover="this.style.color='red'" onmouseout="this.style.color=''">
+							<i class="fa-solid fa-circle-user" style="color: inherit; transition: color 0.3s; font-size: 20px;;"></i> Admin
+						</a>
+					</li>
+					
+				</ul>
+			</nav>
+        </header>
+        <main>
+			<aside id="mySidebar">
+				<ul>					
+					<li><a class="active" href="trangchu.html">Sản phẩm</a></li>
+					<li><a href="donhang.html">Đơn hàng</a></li>
+					<li><a href="nguoidung.html">Người dùng</a></li>
+					<li><a href="thongke.html">Thống kê</a></li>
+					<li><a onclick="w3_close()">Đóng &times;</a></li>
+				</ul>
+			</aside>
+			<section id="main"> 
+				<button id="openNav" class="menu-button" onclick="w3_open()">&#9776; Menu</button>
+                <h1>Thông tin Sản Phẩm</h1>
+                    <form action="#" id="formId">
+						<div class="change_img">
+							<img src="../../img/iphone.png" alt="laptop" id="product_pic" style="margin-bottom: 10px;">
+						</div>
+						<div class="edit">
+							<label for="product_loaisanpham">Loại sản phẩm</label>
+							<select id="product_loaisanpham" name="product_loaisanpham" disabled>
+                                <option value="iphone">Iphone</option>
+                                <option value="samsung">Samsung</option>
+                                <option value="oppo">Oppo</option>
+                            </select>
+						</div> 
+						<div class="edit">
+							<label for="product_name">Tên</label>
+							<input type="text" value="iPhone 16 Pro Max" disabled>
+						</div> 
+						<div class="edit">
+							<label for="product_price">Giá</label>
+							<input type="text" value="34.990.000đ" disabled>
+						</div>						
+						<div class="edit">
+							<label for="product_quantity">Số lượng</label>
+							<input type="text" value="100" disabled>
+						</div>
+						<div class="edit">
+							<label for="product_quantity">Mô tả</label>
+							<textarea name="textarea_field" disabled>Chip: MediaTek Dimensity 7300-Energy 5G 8 nhân
+RAM: 12 GB
+Dung lượng: 256 GB
+Camera sau: Chính 50 MP & Phụ 8 MP, 2 MP
+Camera trước: 32 MP
+Pin 5000 mAh, Sạc 80 W 
+							</textarea>
+						</div>
+						<div class="buttons">
+							<a href="trangchu.html"><i class="fa-solid fa-x"></i>Đóng</a>
+							<a href="sua_sp.html"><i class="fas fa-edit"></i>Chỉnh sửa</a>
+						</div>
+                    </form>
+            </section>    
+        </main>
+		<script>
+			
+			// js cua phan aside menu
+			function w3_open() {
+  				document.getElementById("main").style.marginLeft = "15%";
+  				document.getElementById("mySidebar").style.width = "15%";
+  				document.getElementById("mySidebar").style.display = "block";
+  				document.getElementById("openNav").style.display = 'none';
+				}
+			function w3_close() {
+  				document.getElementById("main").style.marginLeft = "0%";
+  				document.getElementById("mySidebar").style.display = "none";
+  				document.getElementById("openNav").style.display = "inline-block";
+			}
+
+			let productPic = document.getElementById("product_pic");
+			let inputFile = document.getElementById("input_file");
+
+
+			inputFile.onchange = function(){
+				productPic.src = URL.createObjectURL(inputFile.files[0]);
+			}
+
+			function warning() {
+  				// Lấy tất cả các phần tử <input> trừ phần tử đầu tiên
+				var inputs = document.querySelectorAll("input:not(:first-child)");
+
+				// Kiểm tra từng phần tử <input>
+				for (var i = 0; i < inputs.length; i++) {
+					var inputValue = inputs[i].value;
+					
+					if (inputValue == 0) {
+						alert("Bạn chưa điền đủ thông tin !!!");
+						return;
+					}
+				}
+				var result = confirm("Bạn có chắc muốn thêm sản phẩm này không ?");
+				if (result)
+					alert("Bạn đã thêm thành công !");
+			}
+
+			//prevent refresh page
+			var form = document.getElementById("formId");
+			function submitForm(event){
+				event.preventDefault();
+			}
+
+			//calling a function during form submission
+			form.addEventListener('submit', submitForm);
+			
+
+		</script>
+    </body>

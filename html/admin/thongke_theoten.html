@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1acf2d22a5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../css/admin/style_donhang.css">
+    <title>Thống kê</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="navbar-list">
+                <!--link hompage-->
+                <li class="left">
+                    <a href="trangchu.html">
+                    <img src="../../img/logophuc.jpg">
+                    </a>
+                </li>
+                <div class="right" style="margin-left: 500px;">
+                    <li >
+                        <input type="text" placeholder="Tên sản phẩm..."style="border-radius:30px;" > 
+                        <a href="ketquatimkiem.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    </li>
+                </div >
+                
+                <li style="margin-left: auto; ">
+                    <a href="dangnhap.html" 
+                       style="font-size: 20px; color: inherit; text-decoration: none;margin-top: auto;"
+                       onmouseover="this.style.color='red'" onmouseout="this.style.color=''">
+                        Đăng xuất
+                    </a>
+                </li>
+
+                <li>
+                    <a href="chi_tiet_admin.html" 
+                       style="color: inherit; text-decoration: none; font-size: 20px;margin-top: auto"
+                       onmouseover="this.style.color='red'" onmouseout="this.style.color=''">
+                        <i class="fa-solid fa-circle-user" style="color: inherit; transition: color 0.3s; font-size: 20px;;"></i> Admin
+                    </a>
+                </li>
+                
+            </ul>
+        </nav>
+    </header>
+<main>
+    <aside id="mySidebar">
+        <ul>            
+            <li><a href="trangchu.html">Sản phẩm</a></li>
+            <li><a href="donhang.html">Đơn hàng</a></li>
+            <li><a href="nguoidung.html">Người dùng</a></li>
+            <li><a class="active" href="thongke.html">Thống kê</a></li>
+            <li><a onclick="w3_close()">Đóng &times;</a></li>
+        </ul>
+    </aside>
+    <section id="main">
+        <button id="openNav" class="menu-button" onclick="w3_open()">&#9776; Menu</button>
+        <h1>Thống kê</h1>
+        <!--product list-->
+            <h1 style="text-align: center;">Những người mua hàng nhiều nhất</h1>
+            <div class="filter">
+            <!-- Chọn filter -->
+            
+            <div class="date">
+                <label for="start">Từ ngày: </label>
+                <input type="date" id="start" name="start" value="2023-11-24" min="2018-01-01" max="2023-12-31">
+                <label for="end">đến </label>
+                <input type="date" id="end" name="end" value="2023-11-30" min="2018-01-01" max="2023-12-31">
+            </div>
+        </div>
+        <table>
+            <!--noi dung tieu de-->
+            <tr class="title">
+                <th>Avatar</th>
+                <th>Khách hàng</th>
+                <th>Địa chỉ</th>
+                <th>Số lượng đơn hàng</th>
+                <th>Tổng tiền</th>
+            </tr>
+            <!--noi dung cac san pham-->
+            <tr class="product">
+                <td class="avatar"><a href="chi_tiet_nguoi_dung.html"><img src="../../img/logo1.jpg" alt="avatar1"></a></td>
+                <td>Nguyễn Văn A</td>
+                <td>273 An Dương Vương, p4, q5, TP HCM</td>
+                <td>15</td>
+                <td>1.124.490.000đ</td>
+                <td><a href="danhsach_khachhang.html">view</a></td>
+            </tr>
+            <tr class="product">
+                <td class="avatar"><a href="chi_tiet_nguoi_dung.html"><img src="../../img/logo2.jpg" alt="avatar2"></a></td>
+                <td>Trần Văn B</td>
+                <td>273 An Dương Vương, p4, q5, TP HCM</td>
+                <td>12</td>
+                <td>934.990.000đ</td>
+                <td><a href="danhsach_khachhang.html">view</a></td>
+            </tr>
+            <tr class="product">
+                <td class="avatar"><a href="chi_tiet_nguoi_dung.html"><img src="../../img/logo3.jpg" alt="avatqr3"></a></td>
+                <td>Nguyễn Thị C</td>
+                <td>273 An Dương Vương, p4, q5, TP HCM</td>
+                <td>9</td>
+                <td>711.490.000đ</td>
+                <td><a href="danhsach_khachhang.html">view</a></td>
+            </tr>
+            <tr class="product">
+                <td class="avatar"><a href="chi_tiet_nguoi_dung.html"><img src="../../img/logo4.jpg" alt="avata4"></a></td>
+                <td>Dương Thị D</td>
+                <td>273 An Dương Vương, p4, q5, TP HCM</td>
+                <td>8</td>
+                <td>622.789.000đ</td>
+                <td><a href="danhsach_khachhang.html">view</a></td>
+            </tr>
+            <tr class="product">
+                <td class="avatar"><a href="chi_tiet_nguoi_dung.html"><img src="../../img/logo5.jpg" alt="avatar5"></a></td>
+                <td>Ngô Văn E</td>
+                <td>273 An Dương Vương, p4, q5, TP HCM</td>
+                <td>5</td>
+                <td>399.720.000đ</td>
+                <td><a href="danhsach_khachhang.html">view</a></td>
+            </tr>
+            <tr class="product">
+                <td class="avatar"><a href="chi_tiet_nguoi_dung.html"><img src="../../img/logo6.jpg" alt="avatar6"></a></td>
+                <td>Lý Thị H</td>
+                <td>273 An Dương Vương, p4, q5, TP HCM</td>
+                <td>3</td>
+                <td>188.888.000đ</td>
+                <td><a href="danhsach_khachhang.html">view</a></td>
+            </tr>
+        
+            
+            <!-- <tr class="product sum">
+                <td colspan="3" class="tong">Tổng</td>
+            </tr> -->
+            
+        </table>
+    </section>
+    <script>
+        // js cua phan aside menu
+			function w3_open() {
+  				document.getElementById("main").style.marginLeft = "15%";
+  				document.getElementById("mySidebar").style.width = "15%";
+  				document.getElementById("mySidebar").style.display = "block";
+  				document.getElementById("openNav").style.display = 'none';
+				}
+			function w3_close() {
+  				document.getElementById("main").style.marginLeft = "0%";
+  				document.getElementById("mySidebar").style.display = "none";
+  				document.getElementById("openNav").style.display = "inline-block";
+			}
+
+    </script>
+</body>
+</html>

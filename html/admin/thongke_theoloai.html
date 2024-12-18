@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1acf2d22a5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../css/admin/style_thongketheoloai.css">
+    <title>Thống kê</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="navbar-list">
+                <!--link hompage-->
+                <li class="left">
+                    <a href="trangchu.html">
+                    <img src="../../img/logophuc.jpg">
+                    </a>
+                </li>
+                <div class="right" style="margin-left: 500px;">
+                    <li >
+                        <input type="text" placeholder="Tên sản phẩm..."style="border-radius:30px;" > 
+                        <a href="ketquatimkiem.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    </li>
+                </div >
+                
+                <li style="margin-left: auto; ">
+                    <a href="dangnhap.html" 
+                       style="font-size: 20px; color: inherit; text-decoration: none;margin-top: auto;"
+                       onmouseover="this.style.color='red'" onmouseout="this.style.color=''">
+                        Đăng xuất
+                    </a>
+                </li>
+
+                <li>
+                    <a href="chi_tiet_admin.html" 
+                       style="color: inherit; text-decoration: none; font-size: 20px;margin-top: auto"
+                       onmouseover="this.style.color='red'" onmouseout="this.style.color=''">
+                        <i class="fa-solid fa-circle-user" style="color: inherit; transition: color 0.3s; font-size: 20px;;"></i> Admin
+                    </a>
+                </li>
+                
+            </ul>
+        </nav>
+    </header>
+<main>
+    <aside id="mySidebar">
+        <ul>            
+            <li><a href="trangchu.html">Sản phẩm</a></li>
+            <li><a href="donhang.html">Đơn hàng</a></li>
+            <li><a href="nguoidung.html">Người dùng</a></li>
+            <li><a class="active" href="thongke.html">Thống kê</a></li>
+            <li><a onclick="w3_close()">Đóng &times;</a></li>
+        </ul>
+    </aside>
+    <section id="main">
+        <button id="openNav" class="menu-button" onclick="w3_open()">&#9776; Menu</button>
+        <!--create button-->
+        <h1>Thống kê </h1>
+        <!-- <a href="themsp.html" class="create-button"><i class="fas fa-plus"></i> Thêm</a> -->
+        <!--product list-->
+        <h1 style="text-align: center;">Những sản phẩm bán ra</h1>
+        <div class="filter">
+            <!-- Chọn filter -->
+            
+            <div class="date">
+                <label for="start">Từ ngày: </label>
+                <input type="date" id="start" name="start" value="2023-11-24" min="2018-01-01" max="2023-12-31">
+                <label for="end">đến </label>
+                <input type="date" id="end" name="end" value="2023-11-30" min="2018-01-01" max="2023-12-31">
+            </div>
+        </div>
+        <table>
+            <!--noi dung tieu de-->
+            <tr class="title">
+                <!-- <th>Mã</th> -->
+                <th>Hình ảnh</th>
+                <th>Tên sản phẩm</th>
+                <th>Số lượng bán ra</th>
+                <th>Số tiền thu được</th>
+                <th>Bán ế nhất</th>
+                <th>Bán chạy nhất</th>
+                <!-- <th>Thao tác</th> -->
+            </tr>
+            <!--noi dung cac san pham-->
+            <tr class="product">
+                <!-- <td>#1</td> -->
+                <td><a href="chi_tiet_sp.html"><img src="../../img/iphone.png" alt="iphone"></a></td>
+                <td>iPhone 16 Pro Max</td>
+                <td> 13 </td>
+                <td>1.300.000.000đ</td>
+                <td>
+                    
+                </td>
+                <td>
+                    <span style="font-size: 24px; color: black;">✔</span>
+                </td>
+                <td><a href="danhsach_sanpham.html">view</a></td>
+            </tr>
+            <tr class="product">
+                <!-- <td>#2</td> -->
+                <td><a href="chi_tiet_sp.html"><img src="../../img/oppo.png" alt="oppo"></a></td>
+                <td>Oppo reno a15</td>
+                <td>10</td>
+                <td>250.990.000đ</td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td><a href="danhsach_sanpham.html">view</a></td>
+            </tr>
+            <tr class="product">
+                <!-- <td>#3</td> -->
+                <td><a href="chi_tiet_sp.html"><img src="../../img/samsung.png" alt="samsung"></a></td>
+                <td>Samsung a73 plus</td>
+                <td>2</td>
+                <td>30.000.000đ</td>
+                <td>
+                    <span style="font-size: 24px; color: black;">✔</span>
+                </td>
+                <td>
+
+                </td>
+                <td><a href="danhsach_sanpham.html">view</a></td>
+            </tr>
+            <tr class="title">
+                <th colspan="3">Tổng tiền thu được</th>
+                <!-- <th>Thao tác</th> -->
+                 <th>1.580.990.000đ</th>
+            </tr>
+        </table>
+    </section>
+    <script>
+        // js cua phan aside menu
+			function w3_open() {
+  				document.getElementById("main").style.marginLeft = "15%";
+  				document.getElementById("mySidebar").style.width = "15%";
+  				document.getElementById("mySidebar").style.display = "block";
+  				document.getElementById("openNav").style.display = 'none';
+				}
+			function w3_close() {
+  				document.getElementById("main").style.marginLeft = "0%";
+  				document.getElementById("mySidebar").style.display = "none";
+  				document.getElementById("openNav").style.display = "inline-block";
+			}
+     
+
+    </script>
+</main>
+</body>
+</html>

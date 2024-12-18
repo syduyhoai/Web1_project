@@ -1,0 +1,247 @@
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/1acf2d22a5.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../../css/admin/style_nhap1.css">
+        <title>Đơn hàng</title>
+    </head>
+    <body>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul class="navbar-list">
+                    <!--link hompage-->
+                    <li class="left">
+                        <a href="trangchu.html">
+                        <img src="../../img/logophuc.jpg">
+                        </a>
+                    </li>
+                    <div class="right" style="margin-left: 500px;">
+                        <li >
+                            <input type="text" placeholder="Tên sản phẩm..."style="border-radius:30px;" > 
+                            <a href="ketquatimkiem.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </li>
+                    </div >
+                    
+                    <li style="margin-left: auto; ">
+                        <a href="dangnhap.html" 
+                           style="font-size: 20px; color: inherit; text-decoration: none;margin-top: auto;"
+                           onmouseover="this.style.color='red'" onmouseout="this.style.color=''">
+                            Đăng xuất
+                        </a>
+                    </li>
+    
+                    <li>
+                        <a href="chi_tiet_admin.html" 
+                           style="color: inherit; text-decoration: none; font-size: 20px;margin-top: auto"
+                           onmouseover="this.style.color='red'" onmouseout="this.style.color=''">
+                            <i class="fa-solid fa-circle-user" style="color: inherit; transition: color 0.3s; font-size: 20px;;"></i> Admin
+                        </a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </header>
+    <main>
+        <aside id="mySidebar">
+            <ul>            
+                <li><a href="trangchu.html">Sản phẩm</a></li>
+                <li><a class="active" href="donhang.html">Đơn hàng</a></li>
+                <li><a href="nguoidung.html">Người dùng</a></li>
+                <li><a href="thongke.html">Thống kê</a></li>
+                <li><a onclick="w3_close()">Đóng &times;</a></li>
+            </ul>
+        </aside>
+        <section id="main">
+            <button id="openNav" class="menu-button" onclick="w3_open()">&#9776; Menu</button>
+            <h1>Đơn Hàng</h1>
+            <!--product list-->
+            
+            <div class="filter">
+                <!-- Chọn filter -->
+                <span>
+                    <input type="radio" name="chon" value="thoiGian" id="thoiGian" onclick="checkThoiGian()" checked>
+                    Lọc theo thời gian
+                </span>
+                <span>
+                    <input type="radio" name="chon" value="tinhTrang" id="tinhTrang" onclick="checkTinhTrang()">
+                    Lọc theo tình trạng
+                </span>
+            
+                <select name="loaiTinhTrang" id="loaiTinhTrang">
+                    <option value="daNhan">Đã nhận</option>
+                    <option value="chuaNhan">Chưa nhận</option>
+                    <option value="daHuy">Đã hủy</option>
+                </select>
+                
+                <div class="date">
+                    <label for="start">Từ ngày: </label>
+                    <input type="date" id="start" name="start" value="2023-11-24" min="2018-01-01" max="2023-12-31">
+                    <label for="end">đến </label>
+                    <input type="date" id="end" name="end" value="2023-11-30" min="2018-01-01" max="2023-12-31">
+                </div>
+                <a onclick="move()" class="thongKe">Lọc</a>
+            </div>
+            
+            <table>
+                <!--noi dung tieu de-->
+                <tr class="title">
+                    <!-- <th>Mã đơn hàng</th> -->
+                    <th>Khách hàng</th>
+                    <th>Địa chỉ</th>
+                    <th>Thành tiền</th>
+                    <th>Thời gian</th>
+                    <th>Trạng thái</th>
+                </tr>
+                <!--noi dung cac san pham-->
+                <tr class="product">
+                    <!-- <td><a href="chi_tiet_don_hang.html">#1</a></td> -->
+                    <td>Nguyễn Văn A</td>
+                    <td>273 An Dương Vương, p4, q5, TP HCM</td>
+                    <td>11.490.000đ</td>
+                    <td>2024-01-01</td>
+                    <td >
+                        <select id="trangthai" class="state">
+                            <option value="daNhan">Đã nhận</option>
+                            <option value="chuaNhan"selected>Chưa nhận</option>
+                            <option value="huy">Hủy</option>
+                        </select>
+                    </td>
+                    <td><a href="chi_tiet_don_hang.html">view</a></td>
+                </tr>
+                <tr class="product">
+                
+                    <td>Trần Văn B</td>
+                    <td>273 An Dương Vương, p4, q5, TP HCM</td>
+                    <td>34.990.000đ</td>
+                    <td>2024-01-01</td>
+                    <td >
+                        <select id="trangthai" class="state">
+                            <option value="daNhan" >Đã nhận</option>
+                            <option value="chuaNhan">Chưa nhận</option>
+                            <option value="huy">Hủy</option>
+                        </select>
+                    </td>
+                    <td><a href="chi_tiet_don_hang.html">view</a></td>
+                </tr>
+                <tr class="product">
+              
+                    <td>Nguyễn Thị C</td>
+                    <td>273 An Dương Vương, p4, q5, TP HCM</td>
+                    <td>11.490.000đ</td>
+                    <td>2024-01-01</td>
+                    <td >
+                        <select id="trangthai" class="state">
+                            <option value="daNhan">Đã nhận</option>
+                            <option value="chuaNhan">Chưa nhận</option>
+                            <option value="huy">Hủy</option>
+                        </select>
+                    </td>
+                    <td><a href="chi_tiet_don_hang.html">view</a></td>
+                </tr>
+                <tr class="product">
+            
+                    <td>Dương Thị D</td>
+                    <td>273 An Dương Vương, p4, q5, TP HCM</td>
+                    <td>22.789.000đ</td>
+                    <td>2024-01-01</td>
+                    <td >
+                        <select id="trangthai" class="state">
+                            <option value="daNhan">Đã nhận</option>
+                            <option value="chuaNhan">Chưa nhận</option>
+                            <option value="huy"selected>Hủy</option>
+                        </select>
+                    </td>
+                    <td><a href="chi_tiet_don_hang.html">view</a></td>
+                </tr>
+                <tr class="product">
+                
+                    <td>Ngô Văn E</td>
+                    <td>273 An Dương Vương, p4, q5, TP HCM</td>
+                    <td>9.720.000đ</td>
+                    <td>2024-01-01</td>
+                    <td >
+                        <select id="trangthai" class="state">
+                            <option value="daNhan">Đã nhận</option>
+                            <option value="chuaNhan">Chưa nhận</option>
+                            <option value="huy">Hủy</option>
+                        </select>
+                    </td>
+                    <td><a href="chi_tiet_don_hang.html">view</a></td>
+                </tr>
+                <tr class="product">
+                  
+                    <td>Lý Thị H</td>
+                    <td>273 An Dương Vương, p4, q5, TP HCM</td>
+                    <td>8.888.000đ</td>
+                    <td>2024-01-01</td>
+                    <td >
+                        <select id="trangthai" class="state">
+                            <option value="daNhan">Đã nhận</option>
+                            <option value="chuaNhan">Chưa nhận</option>
+                            <option value="huy">Hủy</option>
+                        </select>
+                    </td>
+                    <td><a href="chi_tiet_don_hang.html">view</a></td>
+                </tr>
+            </table>
+            <div class="pagination">
+                <a href="donhang.html">&lt;</a>
+                <a href="donhang.html">1</a>
+                <a href="donhang2.html"class="active">2</a>
+                <a href="donhang2.html">&gt;</a>
+            </div>
+        </section>
+    </main>
+    <script>
+        // js cua phan aside menu
+           
+    // js cua phan aside menu
+    function w3_open() {
+        document.getElementById("main").style.marginLeft = "15%";
+        document.getElementById("mySidebar").style.width = "15%";
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("openNav").style.display = 'none';
+    }
+    function w3_close() {
+        document.getElementById("main").style.marginLeft = "0%";
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("openNav").style.display = "inline-block";
+    }
+    // Thiết lập mặc định khi trang được tải
+window.onload = function () {
+    document.getElementById("thoiGian").checked = true; // Mặc định chọn lọc theo thời gian
+    document.querySelector('.date').style.display = 'block'; // Hiển thị phần lọc theo thời gian
+    document.getElementById('loaiTinhTrang').style.display = 'none'; // Ẩn phần lọc theo tình trạng
+};
+
+// Hàm xử lý khi chọn lọc theo thời gian
+function checkThoiGian() {
+    document.querySelector('.date').style.display = 'block'; // Hiển thị phần lọc theo thời gian
+    document.getElementById('loaiTinhTrang').style.display = 'none'; // Ẩn phần lọc theo tình trạng
+}
+
+// Hàm xử lý khi chọn lọc theo tình trạng
+function checkTinhTrang() {
+    document.querySelector('.date').style.display = 'none'; // Ẩn phần lọc theo thời gian
+    document.getElementById('loaiTinhTrang').style.display = 'block'; // Hiển thị phần lọc theo tình trạng
+}
+
+// Hàm di chuyển tới liên kết khi bấm nút Thống kê
+function move() {
+    // Kiểm tra xem người dùng có chọn lọc theo thời gian hay không
+    if (document.getElementById("thoiGian").checked) {
+        // Nếu đang chọn lọc theo thời gian
+        window.location.href = "loctheothoigian.html"; // Chuyển hướng đến trang lọc theo thời gian
+    } else if (document.getElementById("tinhTrang").checked) {
+        // Nếu đang chọn lọc theo tình trạng
+        window.location.href = "loctheotinhtrang1.html"; // Chuyển hướng đến trang lọc theo tình trạng
+    }
+}    
+    </script>
+    </body>
+    </html>

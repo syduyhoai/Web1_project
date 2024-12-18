@@ -1,0 +1,107 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1acf2d22a5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style_pay.css">
+    <title>Thanh toán</title>
+</head>
+<body>
+    <!--header-->
+    <header>
+        <nav>
+            <ul class="navbar-list">
+                <!--link hompage-->
+                <li>
+                    <a href="trangchu_DN.html">
+                    <img src="../img/logophuc.jpg">
+                    </a>
+                </li>
+                <li>
+                    
+                    <input type="text"  placeholder="Bạn tìm gì.."> 
+                    <a href="ket_qua_TK_DN.html" class="srch">
+                        <i class="fa-solid fa-magnifying-glass"></i> 
+                    </a>
+                </li>
+                <li>
+                    <a href="tim_kiem_NC_DN.html">Tìm kiếm nâng cao</a>
+                </li>
+                <li>
+                    <a href="giohang.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Giỏ hàng 
+                    </a>
+                </li>
+                <li>
+                    <a href="donmua.html">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    Lịch sử mua hàng
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">Đăng xuất</a>
+                </li>
+                <li>
+                    <span class="user-afterLog"><i class="fa-solid fa-circle-user"></i></span>Phuc
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <section>
+            <script>
+ 
+                function goTopayPage(choice) {
+                    switch(choice) {
+                        case 'cash':
+                            window.location.href = 'dat_hang_thanh_cong.html';
+                            break;
+                        case 'transfer':
+                            window.location.href = 'pay_InternetBanking.html';
+                            break;
+                        case 'card':
+                            window.location.href = 'pay_card.html';
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            </script>
+        </head>
+        <body>
+        
+        <div class="payment-container">
+
+            <h2>Chọn phương thức thanh toán</h2>
+
+            <form id="paymentForm" onsubmit="return false;"> <!-- Ngừng form gửi khi chưa chọn phương thức thanh toán -->
+                <div class="close-button" onclick="window.location.href='giohang.html'">&times;</div>
+
+                <label>
+                    <input type="radio" name="payment" value="cash" onclick="goTopayPage('cash')">    Thanh toán khi nhận hàng
+                </label><br>
+                <label>
+                    <input type="radio" name="payment" value="transfer" onclick="goTopayPage('transfer')">    Chuyển khoản
+                </label><br>
+                <label>
+                    <input type="radio" name="payment" value="card" onclick="goTopayPage('card')">    Thanh toán qua thẻ
+                </label><br>
+              
+            </form>
+        </div>  
+                    
+        </section>
+    </main>
+    <footer>
+        <h2>PhucPhone</h2>
+        <p>Tổng đài liên hệ: 1900 900 900</p>
+        <p>Email: phucphone@gmail.com</p>
+    </footer>
+</body>
+</html>

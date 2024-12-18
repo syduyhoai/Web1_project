@@ -1,0 +1,140 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/1acf2d22a5.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../../css/admin/style_nhap1.css">
+        <title>Thống kê</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul class="navbar-list">
+                    <!-- Link homepage -->
+                    <li class="left">
+                        <a href="trangchu.html">
+                            <img src="../../img/logophuc.jpg">
+                        </a>
+                    </li>
+                    <div class="right" style="margin-left: 500px;">
+                        <li>
+                            <input type="text" placeholder="Tên sản phẩm..." style="border-radius:30px;">
+                            <a href="ketquatimkiem.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </li>
+                    </div>
+                    
+                    <li style="margin-left: auto;">
+                        <a href="dangnhap.html" style="font-size: 20px; color: inherit; text-decoration: none;" 
+                           onmouseover="this.style.color='red'" onmouseout="this.style.color=''">
+                            Đăng xuất
+                        </a>
+                    </li>
+                    <li>
+                        <a href="chi_tiet_admin.html" style="color: inherit; text-decoration: none; font-size: 20px;" 
+                           onmouseover="this.style.color='red'" onmouseout="this.style.color=''">
+                            <i class="fa-solid fa-circle-user" style="color: inherit; font-size: 20px;"></i> Admin
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <aside id="mySidebar">
+                <ul>
+                    <li><a href="trangchu.html">Sản phẩm</a></li>
+                    <li><a href="donhang.html">Đơn hàng</a></li>
+                    <li><a href="nguoidung.html">Người dùng</a></li>
+                    <li><a class="active" href="thongke.html">Thống kê</a></li>
+                    <li><a onclick="w3_close()">Đóng &times;</a></li>
+                </ul>
+            </aside>
+
+            <section id="main">
+                <button id="openNav" class="menu-button" onclick="w3_open()">&#9776; Menu</button>
+                <h1>Thống kê</h1>
+
+                <!-- Product list -->
+                <div class="filter">
+                    <!-- Chọn filter -->
+                    <span>
+                        <input type="radio" name="chon" value="tenSp" id="thoiGian" onclick="checkThoiGian()" checked>
+                        Theo khách hàng
+                    </span>
+                    <span>
+                        <input type="radio" name="chon" value="loaiSp" id="tinhTrang" onclick="checkTinhTrang()">
+                        Theo sản phẩm
+                    </span>
+
+                    <select name="loaiTinhTrang" id="loaiTinhTrang">
+                        <option value="daNhan">Đã nhận</option>
+                        <option value="chuaNhan">Chưa nhận</option>
+                        <option value="daHuy">Đã hủy</option>
+                    </select>
+
+                    <div class="date">
+                        <label for="start">Từ ngày: </label>
+                        <input type="date" id="start" name="start" value="2023-11-24" min="2018-01-01" max="2023-12-31">
+                        <label for="end">đến </label>
+                        <input type="date" id="end" name="end" value="2023-11-30" min="2018-01-01" max="2023-12-31">
+                    </div>
+                    <a onclick="move()" class="thongKe">Thống kê</a>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            // js của phần aside menu
+            function w3_open() {
+                document.getElementById("main").style.marginLeft = "15%";
+                document.getElementById("mySidebar").style.width = "15%";
+                document.getElementById("mySidebar").style.display = "block";
+                document.getElementById("openNav").style.display = 'none';
+            }
+
+            function w3_close() {
+                document.getElementById("main").style.marginLeft = "0%";
+                document.getElementById("mySidebar").style.display = "none";
+                document.getElementById("openNav").style.display = "inline-block";
+            }
+
+            // Khi trang được tải, mặc định chọn "Thống kê theo khách hàng"
+            window.onload = function() {
+                checkThoiGian();
+            };
+
+            // Khi chọn "Thống kê theo khách hàng"
+            function checkThoiGian() {
+                // Không cần thay đổi gì ở đây
+            }
+
+            // Khi chọn "Thống kê theo sản phẩm"
+            function checkTinhTrang() {
+                // Không cần thay đổi gì ở đây
+            }
+
+            // Khi bấm nút "Lọc"
+            function move() {
+                // Kiểm tra xem radio nào được chọn
+                const radioButtons = document.getElementsByName("chon");
+                let selectedRadio = null;
+
+                for (let i = 0; i < radioButtons.length; i++) {
+                    if (radioButtons[i].checked) {
+                        selectedRadio = radioButtons[i].value;
+                    }
+                }
+
+                // Nếu chọn "Thống kê theo khách hàng"
+                if (selectedRadio === "tenSp") {
+                    window.location.href = "thongke_theoten.html";  // Chuyển hướng đến trang thống kê theo tên sản phẩm
+                }
+                // Nếu chọn "Thống kê theo sản phẩm"
+                else if (selectedRadio === "loaiSp") {
+                    window.location.href = "thongke_theoloai.html";  // Chuyển hướng đến trang thống kê theo loại sản phẩm
+                }
+            }
+        </script>
+    </body>
+</html>
